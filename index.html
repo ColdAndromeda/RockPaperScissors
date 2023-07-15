@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        const moves = ['rock', 'paper', 'scissors'];
+
+        function game() {
+            var UserInput = prompt("Choose your move");
+            var ComputerChoice = RandomComputerChoice()
+            print(playRound(UserInput, ComputerChoice))
+
+        }
+
+        function RandomComputerChoice() {
+            var num = Math.floor(Math.random() * moves.length);
+            var choice = moves[num];
+            return num;
+        }
+
+        function playRound(playerSelection, computerSelection) {
+
+            main_selection = playerSelection.toLowerCase();
+
+            if (main_selection == 'rock' && computerSelection == 'paper') {
+                console.log(`${main_selection} vs ${computerSelection}`);
+                console.log('You lose. Computer wins!');
+            } else if (main_selection == 'paper' && computerSelection == 'rock') {
+                console.log(`${main_selection} vs ${computerSelection}`);
+                console.log('You win!');
+            } else if (main_selection == 'scissor' && computerSelection == 'paper') {
+                console.log(`${main_selection} vs ${computerSelection}`);
+                console.log('You win!');
+            } else if (main_selection == 'paper' && computerSelection == 'scissor') {
+                console.log(`${main_selection} vs ${computerSelection}`);
+                console.log('You lose. Computer wins!');
+            } else if (main_selection == 'rock' && computerSelection == 'scissor') {
+                console.log(`${main_selection} vs ${computerSelection}`);
+                console.log('You win!');
+            } else if (main_selection == 'scissor' && computerSelection == 'rock') {
+                console.log(`${main_selection} vs ${computerSelection}`);
+                console.log('You lose. Computer wins!');
+            } else if (main_selection === computerSelection) {
+                console.log(`${main_selection} vs ${computerSelection}`);
+                console.log('It\'s a tie!');
+            } else {
+                console.log(`${main_selection} vs ${computerSelection}`);
+                console.log('Invalid selection. Please choose between rock, paper, or scissor.');
+            }
+        }
+
+
+
+
+        const playerSelection = "rock";
+        const computerSelection = getComputerChoice();
+        console.log(playRound(playerSelection, computerSelection));
+    </script>
+</body>
+
+</html>
