@@ -13,19 +13,19 @@
         const moves = ['rock', 'paper', 'scissor'];
 
         function game() {
-            var UserInput = prompt("Choose your move");
+            let UserInput = prompt("Choose your move");
             playRound(UserInput, RandomComputerChoice());
         }
 
         function RandomComputerChoice() {
-            var num = Math.floor(Math.random() * moves.length);
-            var choice = moves[num];
+            let num = Math.floor(Math.random() * moves.length);
+            let choice = moves[num];
             console.log(choice);
             return choice;
         }
 
         function playRound(playerSelection, computerSelection) {
-            var main_selection = playerSelection.toLowerCase();
+            let main_selection = playerSelection.toLowerCase();
 
             if (main_selection === 'rock' && computerSelection === 'paper') {
                 console.log(`${main_selection} vs ${computerSelection}`);
